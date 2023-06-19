@@ -1,7 +1,7 @@
-from built_modules import import_matrices as mat, import_vectors as vect
+# from built_modules import import_matrices as mat, import_vectors as vect
 from copy import deepcopy
 from manim import *
-from perlin_noise import PerlinNoise
+# from perlin_noise import PerlinNoise
 from PIL import Image
 from pynput.keyboard import Key
 from pynput.mouse import Button
@@ -949,12 +949,59 @@ import collections, math, matplotlib.pyplot as plt, numpy as np, pygame, pynput,
 # a /= 255
 # print(a)
 
-def myfunc(a, b):
-    return a + b
+# def myfunc(a, b):
+#     return a + b
 
-x = lambda a, b : a + b
-y = myfunc
-print(x(6, 9))
-print(y(6, 9))
-print(x(7, 12))
-print(y(7, 12))
+# x = lambda a, b : a + b
+# y = myfunc
+# print(x(6, 9))
+# print(y(6, 9))
+# print(x(7, 12))
+# print(y(7, 12))
+
+t = int(input())
+
+for i in range(t):
+    s = input()
+    pts = 0
+    done = False
+    while not(done):
+        n_0 = -1
+        n_1 = -1
+        for j in range(len(s)):
+            if s[j] == '0':
+                n_0 = j
+                break
+        if n_0 == -1:
+            done = True
+            continue
+        for j in range(n_0, len(s)):
+            if s[j] == '1':
+                n_1 = j
+                break
+        if n_0 != -1 and n_1 != -1:
+            s = s[:n_0] + s[n_0 + 1:n_1] + s[n_1 + 1:]
+        else:
+            done = True
+            continue
+    
+        n_0 = -1
+        n_1 = -1
+        for j in range(len(s)):
+            if s[j] == '0':
+                n_0 = j
+                break
+        if n_0 == -1:
+            done = True
+            continue
+        for j in range(len(s) - 1, n_0, -1):
+            if s[j] == '1':
+                n_1 = j
+                break
+        if n_0 != -1 and n_1 != -1:
+            s = s[:n_0] + s[n_0 + 1:n_1] + s[n_1 + 1:]
+            pts += 1
+        else:
+            done = True
+            continue
+    print(pts)
