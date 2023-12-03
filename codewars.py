@@ -71,7 +71,7 @@ import collections, csv, math, matplotlib.pyplot as plt, numpy as np, pygame, py
 # print(sorted(["B", "A"]) == ["A", "B"])
 
 # def abc(a, b = 7, c = 8, d = 12):
-    # print(2 * a * b * c * d)
+	# print(2 * a * b * c * d)
 
 # abc(a = 2, f = 5)
 # temp_clr = []
@@ -984,7 +984,7 @@ import collections, csv, math, matplotlib.pyplot as plt, numpy as np, pygame, py
 #         else:
 #             done = True
 #             continue
-    
+	
 #         n_0 = -1
 #         n_1 = -1
 #         for j in range(len(s)):
@@ -1171,3 +1171,35 @@ s = ["0.01 0.6117 0.001000 206.00 0.000 2374.9 2374.9 0.001 2500.9 2500.9 0.0000
 # b.writerows(s)
 
 # a.close()
+
+# b = 5
+
+# def func():
+# 	a = b
+# 	a += 2
+# 	print("Inside: a =", a, "b =", b)
+# 	masses = [1, 2, 3]
+# 	all_pos = np.array([[1, 0, -7],
+# 						[2, 5, 0],
+# 						[-3, -2, 2]])
+# 	all_vel = np.array([[1, 2, 3],
+# 						[4, 5, 6],
+# 						[7, 8, 9]])
+# 	# print(np.linalg.norm(all_vel, axis=1) ** 2)
+# 	all_p = np.transpose(np.multiply(masses, np.transpose(all_vel)))
+# 	print(np.sum(all_p, axis=0))
+# 	all_L_p = np.cross(all_pos, all_p, axis=1)
+# 	print(all_L_p)
+# 	net_angular_momentum = np.sum(all_L_p, axis=0)
+# 	print(net_angular_momentum)
+
+# func()
+# print("Outside: b =", b)
+
+if 1 < 2 or 3 < 1:
+	print("1")
+
+if 1 <= (2 or 3) <= 3:
+	print("2")
+
+print((2 or 3))
